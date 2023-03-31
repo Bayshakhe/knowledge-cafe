@@ -1,4 +1,6 @@
 import './App.css'
+import Answers from './components/Answers/Answers'
+import Contianer from './components/Container/Contianer'
 import Header from './components/Header/Header'
 
 function App() {
@@ -6,6 +8,8 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
+      <Contianer></Contianer>
+      <Answers></Answers>
     </div>
   )
 }
