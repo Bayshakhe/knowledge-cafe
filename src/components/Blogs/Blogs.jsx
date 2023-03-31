@@ -5,11 +5,11 @@ const Blogs = (props) => {
     console.log(id)
     return (
         <div className='bg-orange-200'>
-            {/* <img src={blogImage} alt="" /> */}
-            <div className='flex'>
-                {/* <img src={authorImage} alt="" /> */}
+            <img className='w-full' src={blogImage} alt="Blog image" />
+            <div className='flex my-3'>
+                <img className='w-12 rounded-full mx-3' src={authorImage} alt="author image" />
                 <div>
-                    <p>{authorName}</p>
+                    <p className='font-bold text-xl'>{authorName}</p>
                     <p>{publishDate}</p>
                 </div>
                 <p>{readTime} min read</p>
