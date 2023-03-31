@@ -2,14 +2,20 @@ import './App.css'
 import Answers from './components/Answers/Answers'
 import Contianer from './components/Container/Contianer'
 import Header from './components/Header/Header'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
-
+  const sweetAlert = () => {
+    toast("Wow so easy!")
+}
   return (
     <div className="App px-5">
       <Header></Header>
-      <Contianer></Contianer>
+      <Contianer sweetAlert={sweetAlert}></Contianer>
       <Answers></Answers>
+      <ToastContainer></ToastContainer>
     </div>
   )
 }

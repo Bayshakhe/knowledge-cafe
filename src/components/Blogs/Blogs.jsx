@@ -2,17 +2,12 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 import { faBookmark } from '@fortawesome/free-regular-svg-icons'
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 
 const Blogs = (props) => {
     const {id, authorImage, authorName, blogImage, blogTitle, publishDate, readTime} = props.blog;
     const addBookmark = props.addBookmark;
     const timeCount = props.timeCount;
 
-    const sweetAlert = () => {
-        toast("Wow so easy!")
-    }
     return (
         <div className='mt-5'>
             <img className='w-full rounded-lg' src={blogImage} alt="Blog image" />

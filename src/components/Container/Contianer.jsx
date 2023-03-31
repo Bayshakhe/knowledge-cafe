@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Blogs from '../Blogs/Blogs';
 import Bookmarked from '../Bookmarked/Bookmarked';
 
-const Contianer = () => {
+const Contianer = (props) => {
+    const sweetAlert = props.sweetAlert;
     const [blogs, setBlogs] = useState([]);
     useEffect(()=>{
         fetch('fakedata.json')
@@ -20,6 +21,7 @@ const Contianer = () => {
         if(list){
             const newList = [...list, blogTitle]
             localStorage.setItem('bookmarkList', JSON.stringify(newList))
+            
         }
         else{
             const markList = [blogTitle];
@@ -33,6 +35,9 @@ const Contianer = () => {
         const exist = JSON.parse(localStorage.getItem('bookmarked'))
         if(exist){
             const extended = exist + 1;
+            if(extended % 2 == 0){
+                sweetAlert()
+            }
             localStorage.setItem('bookmarked', JSON.stringify(extended));
         }
         else{
