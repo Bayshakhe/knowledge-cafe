@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const sweetAlert = () => {
-    toast("Wow so easy!")
+    toast("You Have Already Bookmarked This Blog!")
 }
   return (
     <div className="App px-5">

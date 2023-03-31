@@ -13,31 +13,29 @@ const Contianer = (props) => {
 
     const [bookmark, setBookmark] = useState([])
     const [bookmarkList, setBookmarkList] = useState([])
+    const [readTimeCount, setReadTimeCount] = useState();
 
     const addBookmark = (blogTitle) => {
-        // console.log(blogTitle)
-
         const list = JSON.parse(localStorage.getItem('bookmarkList'));
+        const exisits = list?.find((value, index, array) => value === blogTitle)
+        if(exisits){
+            sweetAlert()
+        }
         if(list){
             const newList = [...list, blogTitle]
             localStorage.setItem('bookmarkList', JSON.stringify(newList))
-            
         }
         else{
             const markList = [blogTitle];
             localStorage.setItem('bookmarkList', JSON.stringify(markList))
         }
-        // setBookmarkList(JSON.parse(localStorage.getItem('bookmarkList')))
-        setBookmarkList(localStorage.getItem('bookmarkList'))
+        setBookmarkList(JSON.parse(localStorage.getItem('bookmarkList')))
 
 
 
         const exist = JSON.parse(localStorage.getItem('bookmarked'))
         if(exist){
             const extended = exist + 1;
-            if(extended % 2 == 0){
-                sweetAlert()
-            }
             localStorage.setItem('bookmarked', JSON.stringify(extended));
         }
         else{
@@ -46,15 +44,7 @@ const Contianer = (props) => {
         setBookmark(localStorage.getItem('bookmarked'))
     }
 
-    useEffect(()=>{
-        setBookmark(localStorage.getItem('bookmarked'))
-    },[bookmark]);
-    useEffect(()=>{
-        // setBookmarkList(JSON.parse(localStorage.getItem('bookmarkList')))
-        setBookmarkList(localStorage.getItem('bookmarkList'))
-    },[bookmarkList])
 
-    const [readTimeCount, setReadTimeCount] = useState();
     const timeCount = (readTime) => {
         const existTime = JSON.parse(localStorage.getItem('time'))
         if(existTime){
@@ -66,6 +56,16 @@ const Contianer = (props) => {
         }
         setReadTimeCount(localStorage.getItem('time'))
     }
+
+    useEffect(()=>{
+        setBookmark(localStorage.getItem('bookmarked'))
+    },[bookmark]);
+
+    useEffect(()=>{
+        setBookmarkList(JSON.parse(localStorage.getItem('bookmarkList')))
+        // setBookmarkList(localStorage.getItem('bookmarkList'))
+    },[bookmark])
+
     useEffect(()=>{
         setReadTimeCount(localStorage.getItem('time'))
     },[readTimeCount])

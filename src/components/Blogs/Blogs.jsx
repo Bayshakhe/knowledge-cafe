@@ -25,7 +25,7 @@ const Blogs = (props) => {
             </div>
             
             <h3 className='font-bold text-3xl my-4'>{blogTitle}</h3>
-            <p className=' text-gray-500'>#beginners #programming</p>
+            <p className=' text-gray-500'>#programming #technology</p>
             <p className='my-5' onClick={()=>timeCount(readTime)}><a className='text-blue-800 underline' href="#">Mark as read</a></p>
             <hr className='mb-7'/>
         </div>
