@@ -10,7 +10,7 @@ const Answers = () => {
         <div className="bg-gray-100 p-5 rounded-lg">
           <h4 className="font-bold">1. What is the difference between props and state?</h4>
           <p><strong>Answer: </strong>State is mutable. We can change it's value. Basically we use it for changing value. State define self component and other component can't access this state. But we can send this as read-only property by props. <br />
-          Props are immutable. It is read-only property and can't be changed. We access other components value or data by using props</p>
+          Props are immutable. It is read-only property and can't be changed. We access other components value or data by using props.</p>
         </div>
         <div className="bg-gray-100 p-5 rounded-lg">
           <h4 className="font-bold">2. How does useState work?</h4>

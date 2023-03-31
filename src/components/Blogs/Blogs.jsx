@@ -4,20 +4,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark } from '@fortawesome/free-regular-svg-icons'
 
 const Blogs = (props) => {
-    const {id, authorImage, authorName, blogImage, blogTitle, publishDate, readTime} = props.blog
-    console.log(id)
+    const {id, authorImage, authorName, blogImage, blogTitle, publishDate, readTime} = props.blog;
+    const addBookmark = props.addBookmark;
     return (
         <div className='mt-5'>
             <img className='w-full rounded-lg' src={blogImage} alt="Blog image" />
             <div className='flex my-3 justify-between items-center'>
                 <div className='flex'>
-                <img className='w-12 rounded-full mr-5' src={authorImage} alt="author image" />
+                <img className='w-12 h-12 rounded-full mr-5' src={authorImage} alt="author image" />
                 <div>
                     <p className='font-bold text-xl'>{authorName}</p>
                     <p className='text-sm text-gray-500'>{publishDate}</p>
                 </div>
                 </div>
-                <p className=' text-gray-600'>{readTime} min read <span>
+                <p className=' text-gray-600'>{readTime} min read <span onClick={addBookmark}>
                 <FontAwesomeIcon icon={faBookmark} />
                 </span></p>
             </div>
