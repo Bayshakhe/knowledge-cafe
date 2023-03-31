@@ -7,8 +7,8 @@ const Blogs = (props) => {
     const {id, authorImage, authorName, blogImage, blogTitle, publishDate, readTime} = props.blog
     console.log(id)
     return (
-        <div className=''>
-            <img className='w-full' src={blogImage} alt="Blog image" />
+        <div className='mt-5'>
+            <img className='w-full rounded-lg' src={blogImage} alt="Blog image" />
             <div className='flex my-3 justify-between items-center'>
                 <div className='flex'>
                 <img className='w-12 rounded-full mr-5' src={authorImage} alt="author image" />
