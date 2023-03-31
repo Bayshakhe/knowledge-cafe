@@ -12,7 +12,7 @@ const Contianer = () => {
     },[])
 
     return (
-        <div className='lg:flex justify-between'>
+        <div className='lg:flex justify-between gap-5'>
             <div>
             {
                 blogs.map(blog => <Blogs key={blog.id} blog={blog}></Blogs>)
